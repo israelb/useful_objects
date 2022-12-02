@@ -7,13 +7,19 @@ module Substitute
 
     dependency :charge, Charge
 
+    def initialize
+      puts "init"
+    end
+
     def self.build
+      puts "self.build"
       new.tap do |instance|
         instance.configure
       end
     end
 
     def self.call
+      puts "self.call"
       instance = build
       
       instance.()
